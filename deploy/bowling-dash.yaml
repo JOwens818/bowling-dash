@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bowling-dash
+  namespace: bowling
+spec:
+  selector:
+    matchLabels:
+      app: bowling-dash
+  template:
+    metadata:
+      labels:
+        app: bowling-dash
+    spec:
+      containers:
+      - name: bowling-dash
+        image: docker-registry-service.registry.svc.cluster.local:5000/bowling-dash:latest
+        ports:
+        - containerPort: 3999

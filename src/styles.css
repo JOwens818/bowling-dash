@@ -1,0 +1,336 @@
+:root {
+  color-scheme: dark;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top right, #1d314f 0%, #0b0f14 60%);
+  color: #e8edf7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(120deg, rgba(22, 35, 55, 0.85), rgba(7, 10, 14, 0.97)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(65, 80, 115, 0.08) 0,
+      rgba(65, 80, 115, 0.08) 4px,
+      transparent 4px,
+      transparent 28px
+    );
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem 1.25rem;
+  border-bottom: 1px solid #223046;
+  background: linear-gradient(180deg, rgba(14, 19, 27, 0.94), rgba(10, 14, 20, 0.94));
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(6px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.brand-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.brand-name {
+  font-size: 0.96rem;
+  color: #d7e4ff;
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #a9b5c9;
+  border: 1px solid #2a3b55;
+  border-radius: 999px;
+  padding: 0.36rem 0.75rem;
+  font-size: 0.86rem;
+}
+
+.nav-link:hover {
+  color: #e6edf8;
+  border-color: #3a567f;
+}
+
+.nav-link.active {
+  color: #06121d;
+  border-color: #67e8f9;
+  background: linear-gradient(120deg, #67e8f9, #38bdf8);
+}
+
+.shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filters {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #88e7de;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.1rem 0 0;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.bowler-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: #b5bed0;
+}
+
+.bowler-picker select {
+  border: 1px solid #2a3b55;
+  background: #111820;
+  color: #e8edf7;
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+}
+
+.top-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 0.9rem;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.team-summary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mini-stat {
+  background: linear-gradient(140deg, rgba(20, 31, 44, 0.95), rgba(13, 20, 30, 0.96));
+  border: 1px solid #2b3d58;
+  border-radius: 10px;
+  padding: 0.7rem 0.8rem;
+}
+
+.mini-stat p {
+  margin: 0;
+  color: #9ca8be;
+  font-size: 0.8rem;
+}
+
+.mini-stat h2 {
+  margin: 0.3rem 0 0;
+  font-size: 1.65rem;
+}
+
+.good {
+  color: #33d399;
+}
+
+.bad {
+  color: #f87171;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 0.9rem;
+}
+
+.options-stack {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 0.9rem;
+}
+
+.panel {
+  background: linear-gradient(140deg, rgba(17, 24, 34, 0.94), rgba(10, 14, 20, 0.96));
+  border: 1px solid #28354a;
+  border-radius: 14px;
+  padding: 0.8rem;
+}
+
+.panel h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  color: #d8e2f3;
+}
+
+.empty-state {
+  margin-top: 0.9rem;
+  color: #b8c3d9;
+}
+
+.team-blank h2 {
+  margin: 0 0 0.35rem;
+}
+
+.team-blank p {
+  margin: 0;
+  color: #9ca8be;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.scores-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.scores-table th,
+.scores-table td {
+  border-bottom: 1px solid #243248;
+  padding: 0.45rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.scores-table tbody tr {
+  cursor: pointer;
+}
+
+.scores-table tbody tr:hover {
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.scores-table tbody tr.active {
+  background: rgba(14, 165, 233, 0.2);
+}
+
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.insight-title {
+  margin: 0 0 0.5rem;
+  color: #9ca8be;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.insight-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 0.35rem 0.45rem;
+  border-bottom: 1px solid #243248;
+  column-gap: 0.75rem;
+}
+
+.insight-meta {
+  display: grid;
+  grid-template-columns: 78px 68px;
+  align-items: center;
+  column-gap: 0.6rem;
+}
+
+.insight-week {
+  color: #dbe7ff;
+  font-variant-numeric: tabular-nums;
+}
+
+.insight-date {
+  color: #9ca8be;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.insight-row .good,
+.insight-row .bad {
+  min-width: 48px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+@media (max-width: 900px) {
+  .top-nav {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+
+  .hero {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .filters {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .bowler-picker {
+    flex: 1 1 180px;
+  }
+
+  .top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wide {
+    grid-column: auto;
+  }
+
+  .insight-grid {
+    grid-template-columns: 1fr;
+  }
+}
